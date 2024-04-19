@@ -27,17 +27,6 @@ jobs:
         go-version: '1.22.1'
       id: go
 
-    - name: Create secret directory
-      run: mkdir -p ./secret
-
-    - name: Create apikey file
-      run: echo "${{ secrets.SECRET_APIKEY }}"
-      shell: bash
-
-    - name: Create bootstrap.servers file
-      run: echo "${{ secrets.KAFKA_BOOTSTRAP }}"
-      shell: bash
-
     - name: Load dependencies
       run: go mod download
 
@@ -45,5 +34,8 @@ jobs:
       run: go mod tidy
 
     - name: Run the Go program
+      env:
+        SECRET_APIKEY: ${{ secrets.SECRET_APIKEY }}
+        KAFKA_BOOTSTRAP : ${{ secrets.KAFKA_BOOTSTRAP }}
       run: go run .
 
