@@ -1,10 +1,8 @@
 # Macintosh_publisher
 
 ## Environment Variable
-- SECRET_APIKEY_PATH
-  - ./secrets/apikey
+- SECRET_APIKEY
 - KAFKA_BOOTSTRAP_SERVER
-  - ./secrets/bootstrap.server
 
 ```
 .
@@ -17,9 +15,6 @@
 ├── go.sum
 ├── main.go
 ├── README.md
-├── secrets
-│   ├── apikey
-│   └── bootstrap.servers
 └── test
     └── data.txt
 ```
