@@ -36,6 +36,6 @@ jobs:
     - name: Run the Go program
       env:
         SECRET_APIKEY: ${{ secrets.SECRET_APIKEY }}
-        KAFKA_BOOTSTRAP : ${{ secrets.KAFKA_BOOTSTRAP }}
+        KAFKA_BOOTSTRAP_SERVER : ${{ secrets.KAFKA_BOOTSTRAP }}
       run: go run .
 
