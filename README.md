@@ -42,11 +42,12 @@ These instructions will get you a copy of the project up and running on your loc
 2. **Set up the required secrets**
 - You need to provide your Korea Meteorological Administration REST API key and your Kafka Cluster's listener address as environment variables
 
+
 3. **Run the application**
-  ```bash
-    go mod tidy
-    go run .
-  ```
+   ```bash
+   go mod tidy
+   go run .
+   ```
 
 ### Usage
 The system is set to run automatically via GitHub Actions, which triggers every hour to fetch and update the weather data.
