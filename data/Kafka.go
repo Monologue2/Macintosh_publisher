@@ -34,7 +34,7 @@ func GetConfigSet() *kafka.ConfigMap {
 
 func ProduceJsonToBroker(p *kafka.Producer, m []byte, station_id int) {
 	topic := fmt.Sprintf(
-		"test.%d",
+		"weather.%d",
 		station_id,
 	)
 
