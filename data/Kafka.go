@@ -29,7 +29,6 @@ func GetConfigSet() *kafka.ConfigMap {
 	config := &kafka.ConfigMap{
 		"bootstrap.servers": bootstrap,
 	}
-
 	return config
 }
 
