@@ -1,7 +1,6 @@
 package data
 
 import (
-	"bufio"
 	"fmt"
 	"os"
 
@@ -9,22 +8,7 @@ import (
 )
 
 func GetConfigSet() *kafka.ConfigMap {
-	var bootstrap string
-	path := os.Getenv("KAFKA_BOOTSTRAP_SERVER")
-	if path == "" {
-		fmt.Println("The KAFKA_BOOTSTRAP_SERVER variable is not set.")
-		return nil
-	}
-
-	file, err := os.Open(path)
-	if err != nil {
-		fmt.Println("Error opening The KAFKA_BOOTSTRAP_SERVER secret file:", err)
-		return nil
-	}
-
-	Reader := bufio.NewReader(file)
-	fmt.Fscan(Reader, &bootstrap)
-	defer file.Close()
+	bootstrap := os.Getenv("KAFKA_BOOTSTRAP_SERVER")
 
 	config := &kafka.ConfigMap{
 		"bootstrap.servers": bootstrap,
