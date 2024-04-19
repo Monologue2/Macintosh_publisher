@@ -31,11 +31,11 @@ jobs:
       run: mkdir -p ./secret
 
     - name: Create apikey file
-      run: echo "${{ secrets.SECRET_APIKEY }}" > ./secret/apikey
+      run: echo "${{ secrets.SECRET_APIKEY }}"
       shell: bash
 
     - name: Create bootstrap.servers file
-      run: echo "${{ secrets.KAFKA_BOOTSTRAP }}" > ./secret/bootstrap.servers
+      run: echo "${{ secrets.KAFKA_BOOTSTRAP }}"
       shell: bash
 
     - name: Load dependencies
