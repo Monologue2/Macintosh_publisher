@@ -1,7 +1,6 @@
 package api
 
 import (
-	"bufio"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -45,22 +44,22 @@ func WithHelp(help int) func(*Asos) {
 }
 
 func WithAuthKey() func(*Asos) {
-	var authKey string
-	path := os.Getenv("SECRET_APIKEY_PATH")
-	if path == "" {
-		fmt.Println("The SECRET_APIKEY_PATH variable is not set.")
-		return nil
-	}
+	authKey := os.Getenv("SECRET_APIKEY")
+	// path := os.Getenv("SECRET_APIKEY_PATH")
+	// if path == "" {
+	// 	fmt.Println("The SECRET_APIKEY_PATH variable is not set.")
+	// 	return nil
+	// }
 
-	file, err := os.Open(path)
-	if err != nil {
-		fmt.Println("Error opening The SECRET_APIKEY_PATH secret file:", err)
-		return nil
-	}
+	// file, err := os.Open(path)
+	// if err != nil {
+	// 	fmt.Println("Error opening The SECRET_APIKEY_PATH secret file:", err)
+	// 	return nil
+	// }
 
-	Reader := bufio.NewReader(file)
-	fmt.Fscan(Reader, &authKey)
-	defer file.Close()
+	// Reader := bufio.NewReader(file)
+	// fmt.Fscan(Reader, &authKey)
+	// defer file.Close()
 
 	return func(asos *Asos) {
 		asos.authKey = authKey
