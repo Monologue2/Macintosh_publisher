@@ -6,7 +6,7 @@ name: Weather Data Scheduler
 on:
   schedule:
     # Runs at 5 minutes past every hour
-    - cron: '5 * * * *'
+    - cron: '27 * * * *'
 
 jobs:
 
