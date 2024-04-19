@@ -41,6 +41,9 @@ jobs:
     - name: Load dependencies
       run: go mod download
 
+    - name: tidy dependencies
+      run: go mod tidy
+
     - name: Run the Go program
       run: go run .
 
