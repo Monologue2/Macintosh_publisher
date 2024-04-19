@@ -5,7 +5,7 @@
   - ./secrets/apikey
 - KAFKA_BOOTSTRAP_SERVER
   - ./secrets/bootstrap.server
-<br>
+
 ```
 .
 ├── api
@@ -23,4 +23,3 @@
 └── test
     └── data.txt
 ```
-<br>
