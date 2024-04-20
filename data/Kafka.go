@@ -1,7 +1,6 @@
 package data
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
@@ -17,10 +16,7 @@ func GetConfigSet() *kafka.ConfigMap {
 }
 
 func ProduceJsonToBroker(p *kafka.Producer, m []byte, station_id int) {
-	topic := fmt.Sprintf(
-		"weather.%d",
-		station_id,
-	)
+	topic := "weather.kor"
 
 	p.Produce(&kafka.Message{
 		TopicPartition: kafka.TopicPartition{Topic: &topic, Partition: kafka.PartitionAny},
