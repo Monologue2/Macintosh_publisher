@@ -4,8 +4,6 @@
 name: weather_scheduler
 
 on:
-  push:
-    branches: [ main ]
   schedule:
     # Runs at 5 minutes past every hour
     - cron: '5 * * * *'
